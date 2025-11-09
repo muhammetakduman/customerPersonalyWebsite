@@ -41,7 +41,7 @@ const projects = [
     title: "Görsel Tasarım",
     description:
       "Sosyal medya, poster ve dijital içerikler için kreatif görsel tasarımlar. Görsel hikaye anlatımı ve estetik mükemmellik.",
-    images: ["/görseltas1.jpg", "/görseltas2.jpg"],
+    images: ["/gorseltas1.jpg", "/gorseltas2.jpg"],
     technologies: ["Adobe Photoshop", "Adobe InDesign", "Grafik Tasarım"],
     demo: "#",
     detailsAction: "visual-design" as ViewState,
@@ -76,7 +76,7 @@ export function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project) => (
-            <Card key={project.title} className="overflow-hidden hover:border-primary transition-colors">
+            <Card key={project.title} className="overflow-hidden hover:border-primary transition-colors flex flex-col">
               <div
                 className={`overflow-hidden bg-muted ${project.images.length > 1 ? "grid grid-cols-2" : "aspect-video"}`}
               >
@@ -93,7 +93,7 @@ export function Projects() {
                 <CardTitle>{project.title}</CardTitle>
                 <CardDescription className="leading-relaxed">{project.description}</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
                     <span
@@ -104,14 +104,14 @@ export function Projects() {
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-3">
+                <div className="mt-auto">
                   {project.detailsAction ? (
-                    <Button size="sm" onClick={() => setCurrentView(project.detailsAction!)}>
+                    <Button size="sm" onClick={() => setCurrentView(project.detailsAction!)} className="cursor-pointer">
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Detaylar
                     </Button>
                   ) : (
-                    <Button size="sm" asChild>
+                    <Button size="sm" asChild className="cursor-pointer">
                       <a href={project.demo} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4 mr-2" />
                         {project.demo === "#" ? "Yakında" : "Detaylar"}

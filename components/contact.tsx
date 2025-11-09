@@ -9,18 +9,16 @@ const contactInfo = [
     href: "mailto:merc.hilal@hotmail.com",
   },
   {
+    name: "LinkedIn",
+    icon: Linkedin,
+    value: "Hilal Meriç",
+    href: "https://tr.linkedin.com/in/hilal-meri%C3%A7-565503229",
+  },
+  {
     name: "Konum",
     icon: MapPin,
     value: "Tuzla / İstanbul",
     href: "#",
-  },
-]
-
-const socialLinks = [
-  {
-    name: "LinkedIn",
-    icon: Linkedin,
-    href: "https://tr.linkedin.com/in/hilal-meri%C3%A7-565503229",
   },
 ]
 
@@ -42,6 +40,8 @@ export function Contact() {
               <a
                 key={info.name}
                 href={info.href}
+                target={info.name === "LinkedIn" ? "_blank" : undefined}
+                rel={info.name === "LinkedIn" ? "noopener noreferrer" : undefined}
                 className="flex flex-col items-center gap-3 p-6 rounded-lg border border-border bg-card hover:border-primary transition-colors"
               >
                 <info.icon className="h-6 w-6 text-primary" />
@@ -53,19 +53,10 @@ export function Contact() {
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-6">
-            {socialLinks.map((link) => (
-              <Button key={link.name} variant="outline" size="lg" asChild>
-                <a href={link.href} target="_blank" rel="noopener noreferrer">
-                  <link.icon className="h-5 w-5 mr-2" />
-                  {link.name}
-                </a>
-              </Button>
-            ))}
-          </div>
-
-          <div className="pt-12 text-center text-sm text-muted-foreground">
-            <p>© 2025 Hilal Meriç. Tüm hakları saklıdır.</p>
+          <div className="pt-12 text-center text-sm text-muted-foreground space-y-2">
+            <p className="font-medium">Developed by Muhammet Akduman</p>
+            <p className="text-xs">© 2025 Hilal Meriç. Tüm hakları saklıdır.</p>
+            <p className="text-xs italic">Görseller ve tasarımlar portföy sahibine aittir. İzinsiz kullanım ve çoğaltma yasaktır.</p>
           </div>
         </div>
       </div>

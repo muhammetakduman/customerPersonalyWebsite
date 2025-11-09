@@ -30,10 +30,10 @@ const logoStories = [
     {
         title: "Görsel Tasarım - Kreatif İçerikler",
         description: "Sosyal medya, poster ve dijital içerikler için özel tasarımlar. Görsel hikaye anlatımı ve estetik mükemmellik.",
-        images: ["/görseltas1.jpg", "/görseltas2.jpg"],
+        images: ["/gorseltas1.jpg", "/gorseltas2.jpg"],
         phase: "Görsel İçerik Tasarımı",
         icon: Layers,
-        story: "Görsel tasarım projelerinde, markaların dijital ve fiziksel mecralarda güçlü bir etki yaratması için özgün ve dikkat çekici içerikler ürettik. Her tasarımda, hedef kitleye uygun görsel dil ve estetik yaklaşım benimsenerek, mesajın en etkili şekilde iletilmesi sağlandı. Renk teorisi, tipografi ve kompozisyon prensipleriyle mükemmel görsel deneyimler yarattık."
+        story: "Görsel tasarım projelerinde, markaların dijital ve fiziksel mecralarda güçlü bir etki yaratması için özgün ve dikkat çekici içerikler ürettim. Her tasarımda, hedef kitleye uygun görsel dil ve estetik yaklaşım benimseyerek, mesajın en etkili şekilde iletilmesini sağladım. Renk teorisi, tipografi ve kompozisyon prensipleriyle mükemmel görsel deneyimler yarattım."
     },
     {
         title: "Ürün Tasarımı - Endüstriyel & Konsept",
@@ -41,7 +41,7 @@ const logoStories = [
         images: ["/uruntas1.jpg", "/uruntas2.jpg", "/uruntas3.jpg", "/uruntas4.jpg"],
         phase: "Ürün & Endüstriyel Tasarım",
         icon: Package,
-        story: "Ürün tasarımı sürecinde, kullanıcı ihtiyaçları ve ergonomi prensipleri ön planda tutularak, hem fonksiyonel hem de estetik açıdan güçlü tasarımlar geliştirildi. 3D modelleme, prototipleme ve kullanıcı testleriyle ürünlerin piyasaya sürülmeden önce optimize edilmesi sağlandı. Malzeme seçimi, üretim süreçleri ve sürdürülebilirlik göz önünde bulundurularak endüstriyel tasarım standartlarına uygun çözümler ürettik."
+        story: "Ürün tasarımı sürecinde, kullanıcı ihtiyaçları ve ergonomi prensipleri ön planda tutularak, hem fonksiyonel hem de estetik açıdan güçlü tasarımlar geliştirdim. 3D modelleme, prototipleme ve kullanıcı testleriyle ürünlerin piyasaya sürülmeden önce optimize edilmesini sağladım. Malzeme seçimi, üretim süreçleri ve sürdürülebilirlik göz önünde bulundurularak endüstriyel tasarım standartlarına uygun çözümler ürettim."
     }
 ]
 
