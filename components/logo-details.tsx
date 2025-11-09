@@ -2,11 +2,12 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Palette, Target, Sparkles, Award } from "lucide-react"
+import { ArrowLeft, Palette, Target, Sparkles, Award, Layers, Package } from "lucide-react"
 import { useState } from "react"
 
 interface LogoDetailsProps {
     onBack: () => void
+    initialCategory?: number
 }
 
 const logoStories = [
@@ -25,11 +26,27 @@ const logoStories = [
         phase: "Görsel Kimlik & Uygulama",
         icon: Sparkles,
         story: "Arovela için yaratıcılık ve inovasyonu öne çıkaran bir kimlik geliştirdik. Organik formlar ve canlı renk paleti ile marka karakterini güçlendirdik."
+    },
+    {
+        title: "Görsel Tasarım - Kreatif İçerikler",
+        description: "Sosyal medya, poster ve dijital içerikler için özel tasarımlar. Görsel hikaye anlatımı ve estetik mükemmellik.",
+        images: ["/görseltas1.jpg", "/görseltas2.jpg"],
+        phase: "Görsel İçerik Tasarımı",
+        icon: Layers,
+        story: "Görsel tasarım projelerinde, markaların dijital ve fiziksel mecralarda güçlü bir etki yaratması için özgün ve dikkat çekici içerikler ürettik. Her tasarımda, hedef kitleye uygun görsel dil ve estetik yaklaşım benimsenerek, mesajın en etkili şekilde iletilmesi sağlandı. Renk teorisi, tipografi ve kompozisyon prensipleriyle mükemmel görsel deneyimler yarattık."
+    },
+    {
+        title: "Ürün Tasarımı - Endüstriyel & Konsept",
+        description: "Fonksiyonel ve estetik ürün tasarımları. Kullanıcı odaklı yaklaşım ve inovatif çözümler.",
+        images: ["/uruntas1.jpg", "/uruntas2.jpg", "/uruntas3.jpg", "/uruntas4.jpg"],
+        phase: "Ürün & Endüstriyel Tasarım",
+        icon: Package,
+        story: "Ürün tasarımı sürecinde, kullanıcı ihtiyaçları ve ergonomi prensipleri ön planda tutularak, hem fonksiyonel hem de estetik açıdan güçlü tasarımlar geliştirildi. 3D modelleme, prototipleme ve kullanıcı testleriyle ürünlerin piyasaya sürülmeden önce optimize edilmesi sağlandı. Malzeme seçimi, üretim süreçleri ve sürdürülebilirlik göz önünde bulundurularak endüstriyel tasarım standartlarına uygun çözümler ürettik."
     }
 ]
 
-export function LogoDetails({ onBack }: LogoDetailsProps) {
-    const [selectedStory, setSelectedStory] = useState(0)
+export function LogoDetails({ onBack, initialCategory = 0 }: LogoDetailsProps) {
+    const [selectedStory, setSelectedStory] = useState(initialCategory)
     const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
     const openImageModal = (imageSrc: string) => {
@@ -50,13 +67,13 @@ export function LogoDetails({ onBack }: LogoDetailsProps) {
                         Geri Dön
                     </Button>
                     <div>
-                        <h1 className="text-3xl sm:text-4xl font-bold">Logo Tasarım Hikayesi</h1>
-                        <p className="text-muted-foreground">Marka kimliği yaratma süreci</p>
+                        <h1 className="text-3xl sm:text-4xl font-bold">Tasarım Portföyü</h1>
+                        <p className="text-muted-foreground">Logo, görsel ve ürün tasarım projeleri</p>
                     </div>
                 </div>
 
                 {/* Story Navigation */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                     {logoStories.map((story, index) => (
                         <Card
                             key={index}

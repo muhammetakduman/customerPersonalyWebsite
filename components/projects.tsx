@@ -7,7 +7,7 @@ import { LogoDetails } from "./logo-details"
 import { WebsiteDetails } from "./website-details"
 import { useState } from "react"
 
-type ViewState = 'projects' | 'logo-details' | 'website-details'
+type ViewState = 'projects' | 'logo-details' | 'website-details' | 'product-design' | 'visual-design'
 
 const projects = [
   {
@@ -31,20 +31,20 @@ const projects = [
   {
     title: "Ürün Tasarımı",
     description:
-      "Elektronik cihaz tasarımı ve geliştirme projesi. Kullanıcı ihtiyaçları analizi, konsept geliştirme ve teknik çizim aşamalarını içerir.",
-    images: ["/product-lounge-chair.png", "/product-voltmeter.png"],
+      "Fonksiyonel ve estetik ürün tasarımları. Kullanıcı odaklı yaklaşım, 3D modelleme ve prototipleme ile endüstriyel tasarım çözümleri.",
+    images: ["/uruntas1.jpg", "/uruntas2.jpg", "/uruntas3.jpg", "/uruntas4.jpg"],
     technologies: ["SolidWorks", "Rhinoceros", "Teknik Çizim", "Prototipleme"],
     demo: "#",
-    detailsAction: null,
+    detailsAction: "product-design" as ViewState,
   },
   {
     title: "Görsel Tasarım",
     description:
-      "Afiş, broşür ve diğer basılı/dijital materyaller için görsel tasarım çalışmaları. Tipografi, renk ve kompozisyon odaklı yaratıcı çözümler.",
-    images: ["/poster-designs.png"],
+      "Sosyal medya, poster ve dijital içerikler için kreatif görsel tasarımlar. Görsel hikaye anlatımı ve estetik mükemmellik.",
+    images: ["/görseltas1.jpg", "/görseltas2.jpg"],
     technologies: ["Adobe Photoshop", "Adobe InDesign", "Grafik Tasarım"],
     demo: "#",
-    detailsAction: null,
+    detailsAction: "visual-design" as ViewState,
   },
 ]
 
@@ -52,7 +52,15 @@ export function Projects() {
   const [currentView, setCurrentView] = useState<ViewState>('projects')
 
   if (currentView === 'logo-details') {
-    return <LogoDetails onBack={() => setCurrentView('projects')} />
+    return <LogoDetails onBack={() => setCurrentView('projects')} initialCategory={0} />
+  }
+
+  if (currentView === 'visual-design') {
+    return <LogoDetails onBack={() => setCurrentView('projects')} initialCategory={2} />
+  }
+
+  if (currentView === 'product-design') {
+    return <LogoDetails onBack={() => setCurrentView('projects')} initialCategory={3} />
   }
 
   if (currentView === 'website-details') {
